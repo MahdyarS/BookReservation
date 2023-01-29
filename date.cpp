@@ -7,12 +7,10 @@ date::date()
     day=1;
     month=1;
     year=1300;
-    countt++;
 }
 /////////////////////////////////////////////
 date::date(int d,int m,int y)
 {
-    countt++;
     set_date(d,m,y);
 }
 /////////////////////////////////////////////
@@ -125,4 +123,16 @@ ostream& operator<<(ostream &out,date d)
 {
     out<<d.get_year()<<'/'<<d.get_month()<<'/'<<d.get_day();
     return out;
+}
+/////////////////////////////////////////////
+istream& operator>>(istream &in,date& d)
+{
+    string s;
+    in >> s;
+    int year = stoi(s.substr(0,s.find('/')));
+    s = s.substr(s.find('/')+1);
+    int month = stoi(s.substr(0,s.find('/')));
+    s = s.substr(0,s.find('/')+1);
+    int day = stoi(s);
+    d.set_date(year,month,day);
 }

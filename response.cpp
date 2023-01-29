@@ -9,7 +9,7 @@ class response
 public:
     bool succeeded;
     string message;
-    T date;
+    T data;
 
     response(bool s,string m,T data):succeeded(s),message(m),data(d){}
 

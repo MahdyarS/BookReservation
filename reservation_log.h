@@ -7,6 +7,8 @@ using namespace std;
 
 class reservation_log
 {
+    friend istream& operator>>(istream &in,reservation_log& log);
+    friend ostream& operator<<(ostream &out,reservation_log log);
 
     string username;
     string book_ISBN;
